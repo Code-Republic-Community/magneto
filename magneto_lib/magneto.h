@@ -2,7 +2,7 @@
 #define MAGNETO_LIB_MAGNETO_H
 
 namespace cr {
-namespace magneto {
+namespace chess{
 
 // Defines library API
 
