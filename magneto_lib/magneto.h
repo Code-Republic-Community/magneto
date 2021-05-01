@@ -7,8 +7,8 @@ namespace chessary {
 
 // Defines library API
 
-}  // namespace magneto
 }  // namespace chessary
+}  // namespace magneto
 }  // namespace cr
 
 #endif // MAGNETO_LIB_MAGNETO_H
