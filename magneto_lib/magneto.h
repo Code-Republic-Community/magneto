@@ -30,7 +30,6 @@ namespace chess {
     struct Piece{
         TypeOfPiece piece;
         Color color;
-        Piece();
     };	
 
 
