@@ -21,13 +21,13 @@ namespace magneto {
 
     struct Square{
 private:
-        int file;
-        int rank;
+        const int file;
+        const int rank;
 public:
-	Square(int, int);
+	Square(int f, int r);
         operator std::string() const;
-        int get_file();
-	int get_rank();
+        int get_file() const;
+	int get_rank() const;
     };
 
     struct Piece{

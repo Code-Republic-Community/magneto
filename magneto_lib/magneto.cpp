@@ -2,17 +2,16 @@
 #include <string>
 using namespace cr::magneto;
 
-    Square::Square(int f, int r){
-        this->file = f;
-	this->rank = r;
-       
-    }
+    Square::Square(int f, int r)
+        :file(f)
+	,rank(r) {}       	
+    
 
-    int Square::get_file(){
+    int Square::get_file() const{
         return this->file;
     }
 
-    int Square::get_rank(){
+    int Square::get_rank() const{
         return this->rank;
     }
 
@@ -20,22 +19,11 @@ using namespace cr::magneto;
     Square::operator std::string() const{
         
         char letter = 'a';
-        for (int j = 1; j < this->file; ++j)
-        {
-            ++letter;
-        
-        }
-
+        letter+= file-1;
         char number = '1';  
-        for(int i = 1; i <this->rank; ++i){
-           
-            ++number;
- 
-        }
-       
-        std::string str;
-        str = letter;
-        str+=number;
+        number+= rank-1;
+
+        std::string str = {letter, number};
         return  str;
            
     }
