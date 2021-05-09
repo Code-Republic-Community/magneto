@@ -1,30 +1,22 @@
 #include "magneto.h"
-#include <string>
-using namespace cr::magneto;
 
-    Square::Square(int f, int r)
-        :file(f)
-	,rank(r) {}       	
-    
+namespace cr {
+namespace chess {
 
-    int Square::get_file() const{
-        return this->file;
-    }
+Square::Square(int file, int rank) : file_(file), rank_(rank) {}
 
-    int Square::get_rank() const{
-        return this->rank;
-    }
+int Square::get_file() const { return file_; }
 
+int Square::get_rank() const { return rank_; }
 
-    Square::operator std::string() const{
-        
-        char letter = 'a';
-        letter+= file-1;
-        char number = '1';  
-        number+= rank-1;
+Square::operator std::string() const {
+    char letter = 'a';
+    letter += file_ - 1;
+    char number = '1';
+    number += rank_ - 1;
+    std::string str = {letter, number};
+    return str;
+}
 
-        std::string str = {letter, number};
-        return  str;
-           
-    }
-
+}  // namespace chess
+}  // namespace cr
