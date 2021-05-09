@@ -1,30 +1,33 @@
 #ifndef MAGNETO_LIB_MAGNETO_H
 #define MAGNETO_LIB_MAGNETO_H
-#include <map>
+
 namespace cr {
 namespace magneto {
 
- enum  TypeOfPiece {
-        king,          
-        queen,
-        rook,
-        pawn,       
-        bishop,    
-        knight,
+    enum class TypeOfPiece {
+       kKing,          
+       kQueen,
+       kRook,
+       kPawn,       
+       kBishop,    
+       kKnight,
          
     };
 
-    enum Color{
-        white,
-        black,
+    enum class Color{
+        kWhite,
+        kBlack,
     };
 
     struct Square{
-        int row;
-        int column;
-        std::map <int, std::map<int,std::string>> map;
+private:
+        int file;
+        int rank;
+public:
+	Square(int, int);
         operator std::string() const;
-        Square();
+        int get_file();
+	int get_rank();
     };
 
     struct Piece{

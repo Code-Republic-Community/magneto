@@ -1,25 +1,42 @@
 #include "magneto.h"
 #include <string>
-#include <map>
+using namespace cr::magneto;
 
-
-    cr::magneto::Square::Square(){
-        std::map <int, std::map<int,std::string>> map;
-        int number = 8;
-        for(int i = 0; i < 8; ++i){
-            char  letter = 'a';
-            for (int j = 0; j < 8; ++j)
-            {
-                this->map[i][j]=letter + std::to_string(number);
-                ++letter;
-            }
-            --number;
-        }
+    Square::Square(int f, int r){
+        this->file = f;
+	this->rank = r;
+       
     }
 
-    cr::magneto::Square::operator std::string()const{
+    int Square::get_file(){
+        return this->file;
+    }
 
-        return this->map.find(this->row)->second.find(this->column)->second;
+    int Square::get_rank(){
+        return this->rank;
+    }
 
+
+    Square::operator std::string() const{
+        
+        char letter = 'a';
+        for (int j = 1; j < this->file; ++j)
+        {
+            ++letter;
+        
+        }
+
+        char number = '1';  
+        for(int i = 1; i <this->rank; ++i){
+           
+            ++number;
+ 
+        }
+       
+        std::string str;
+        str = letter;
+        str+=number;
+        return  str;
+           
     }
 
