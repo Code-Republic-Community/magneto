@@ -4,7 +4,37 @@
 namespace cr {
 namespace chess {
 
-// Defines library API
+    enum class TypeOfPiece {
+       kKing,          
+       kQueen,
+       kRook,
+       kPawn,       
+       kBishop,    
+       kKnight,
+         
+    };
+
+    enum class Color{
+        kWhite,
+        kBlack,
+    };
+
+    struct Square{
+private:
+        const int file;
+        const int rank;
+public:
+	Square(int f, int r);
+        operator std::string() const;
+        int get_file() const;
+	int get_rank() const;
+    };
+
+    struct Piece{
+        TypeOfPiece piece;
+        Color color;
+    };
+
 
 }  // namespace chess
 }  // namespace cr
